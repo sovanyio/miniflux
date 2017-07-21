@@ -45,7 +45,7 @@ Router\get_action('show', function () {
 
     switch ($menu) {
         case 'unread':
-            $showAll = Miniflux\Helper\bool_config('item_view_scroll_all', true);
+            $showAll = Helper\bool_config('item_view_scroll_all', true);
             if ($showAll) {
                 $filter = array('unread', 'read');
             } else {
