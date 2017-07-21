@@ -45,7 +45,13 @@ Router\get_action('show', function () {
 
     switch ($menu) {
         case 'unread':
-            $nav = Model\Item\get_item_nav($user_id, $item, array('unread'), array(1, 0), null, $group_id);
+            $showAll = Miniflux\Helper\bool_config('item_view_scroll_all', true);
+            if ($showAll) {
+                $filter = array('unread', 'read');
+            } else {
+                $filter = array('unread');
+            }
+            $nav = Model\Item\get_item_nav($user_id, $item, $filter, array(1, 0), null, $group_id);
             break;
         case 'history':
             $nav = Model\Item\get_item_nav($user_id, $item, array('read'));

@@ -59,6 +59,7 @@
         <?php echo Miniflux\Helper\form_label(t('Refresh interval in minutes for unread counter'), 'frontend_updatecheck_interval') ?>
         <?php echo Miniflux\Helper\form_number('frontend_updatecheck_interval', $values, $errors, array('min="0"')) ?><br/>
 
+        <?php echo Miniflux\Helper\form_checkbox('item_view_scroll_all', t('Include read items when navigating in item view'), 1, isset($values['item_view_scroll_all']) && $values['item_view_scroll_all'] == 1) ?><br />
         <?php echo Miniflux\Helper\form_checkbox('original_marks_read', t('Original link marks article as read'), 1, isset($values['original_marks_read']) && $values['original_marks_read'] == 1) ?><br/>
         <?php echo Miniflux\Helper\form_checkbox('nocontent', t('Do not fetch the content of articles'), 1, isset($values['nocontent']) && $values['nocontent'] == 1) ?><br/>
         <?php echo Miniflux\Helper\form_checkbox('favicons', t('Download favicons'), 1, isset($values['favicons']) && $values['favicons'] == 1) ?><br/>

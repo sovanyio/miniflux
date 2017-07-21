@@ -170,6 +170,7 @@ function get_default_values()
         'items_sorting_direction'       => READING_SORTING_DIRECTION,
         'redirect_nothing_to_read'      => READING_NOTHING_READ_REDIRECT,
         'item_title_link'               => READING_ITEM_TITLE_LINK,
+        'item_view_scroll_all'          => true
     );
 }
 
